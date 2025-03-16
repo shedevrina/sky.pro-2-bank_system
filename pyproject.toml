@@ -3,7 +3,7 @@ name = "pythonproject"
 version = "0.1.0"
 description = "Виджет, который показывает несколько последних успешных банковских операций клиента. "
 authors = [
-    {name = "Anastasiya",email = "shevrina88@gmail.com"}
+    {name = "Anastasiya",email = "shevrina@inbox.ru"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"

@@ -1,6 +1,3 @@
-from typing import Union
-
-
 def mask_account_card(account: str) -> str:
     '''Тип и номер карты или счета маскируется. Для карты и счёта разные маски.'''
     if 'Счет' in account:
