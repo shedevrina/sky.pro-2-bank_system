@@ -6,7 +6,7 @@
 ## Установка:
 1. Клонируйте репозиторий: 
 ```
-git clone https://github.com/username/myblog.git
+git clone https://github.com/shedevrina/sky.pro-2-bank_system.git
 ```
 2. Установите зависимости:
 ```
