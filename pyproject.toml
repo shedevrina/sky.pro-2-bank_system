@@ -1,5 +1,5 @@
 [project]
-name = "pythonproject"
+name = "Python_Project_sky.pro"
 version = "0.1.0"
 description = "Виджет, который показывает несколько последних успешных банковских операций клиента. "
 authors = [
