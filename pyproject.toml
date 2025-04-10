@@ -1,6 +1,6 @@
 [project]
 name = "Python_Project_sky.pro"
-version = "0.1.1"
+version = "0.1.2"
 description = "Виджет, который показывает несколько последних успешных банковских операций клиента. "
 authors = [
     {name = "Anastasiya",email = "shevrina@inbox.ru"}
@@ -20,6 +20,11 @@ flake8 = "^7.1.2"
 black = "^25.1.0"
 mypy = "^1.15.0"
 isort = "^6.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+pytest-cov = "^6.0.0"
 
 [tool.black]
 # Максимальная длина строки
