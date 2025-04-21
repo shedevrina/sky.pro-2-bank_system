@@ -7,9 +7,11 @@ import os
 
 
 while True:
-    print("Введите номер домашней работы (слева):\n1 block - 1\nhomework_10_1 - 10.1\nhomework_11_1 - 11.1\nhomework_11_2 - 11.2\n")
+    print(
+        "Введите номер домашней работы (слева):\n1 block - 1\nhomework_10_1 - 10.1\nhomework_11_1 - 11.1\n"
+        "homework_11_2 - 11.2\n"
+    )
     input_homework = float(input("Домашняя работа номер: "))
-
 
     # 1 block
     if input_homework == 1:
@@ -49,7 +51,6 @@ while True:
             )
         )
 
-
     # homework_11_1
 
     elif input_homework == 11.1:
@@ -88,22 +89,19 @@ while True:
         for card_number in card_number_generator(6, 7):
             print(card_number)
 
-
     # homework_11_2
     elif input_homework == 11.2:
 
         print("\n \n--------->homework_11_2 \n")
-
 
         @log()
         def my_function(x, y):
             """Функция складывает два числа. Типы данных для сложения [int, str, float]"""
             return x + y
 
-
         my_function(1, 2)
 
-        filename = (input("Введите название файла('.txt') для сохранения логов:"))
+        filename = input("Введите название файла('.txt') для сохранения логов:")
         print(f"Файл с логами {filename} будет сохранён в директорию {os.getcwd()}")
 
         @log(filename)
