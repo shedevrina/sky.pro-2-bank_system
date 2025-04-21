@@ -2,6 +2,9 @@ from src.generators import card_number_generator, filter_by_currency, transactio
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.widget import get_date, mask_account_card
+from src.decorators import log
+import os
+
 
 # 1 block
 print("\n \n--------->1 block\n")
@@ -65,13 +68,36 @@ transactions = [
     },
 ]
 
-usd_transactions = filter_by_currency(transactions, "RUB")
-for i in range(4):
-    print(next(usd_transactions))
+# usd_transactions = filter_by_currency(transactions, "RUB")
+# for i in range(4):
+#     print(next(usd_transactions))
+#
+# descriptions = transaction_descriptions(transactions)
+# for i in range(4):
+#     print(next(descriptions))
+#
+# for card_number in card_number_generator(6, 7):
+#     print(card_number)
 
-descriptions = transaction_descriptions(transactions)
-for i in range(4):
-    print(next(descriptions))
 
-for card_number in card_number_generator(6, 7):
-    print(card_number)
+# homework_11_2
+print("\n \n--------->homework_11_2 \n")
+
+
+@log()
+def my_function(x, y):
+    """Функция складывает два числа. Типы данных для сложения [int, str, float]"""
+    return x + y
+
+
+my_function(1, 2)
+
+filename = (input("Введите название файла('.txt') для сохранения логов:"))
+print(f"Файл с логами {filename} будет сохранён в директорию {os.getcwd()}")
+
+@log(filename)
+def my_function(x, y):
+    """Функция складывает два числа. Типы данных для сложения [int, str, float]"""
+    return x + y
+
+my_function(1, 2)
