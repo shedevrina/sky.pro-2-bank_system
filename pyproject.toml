@@ -1,6 +1,6 @@
 [project]
 name = "Python_Project_sky.pro"
-version = "0.1.3"
+version = "0.1.4"
 description = "Виджет, который показывает несколько последних успешных банковских операций клиента. "
 authors = [
     {name = "Anastasiya",email = "shevrina@inbox.ru"}
