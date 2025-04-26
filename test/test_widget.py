@@ -18,7 +18,7 @@ def test_mask_account_card(account_string, expected):
 
 def test_mask_account_card_negative_type(coll_negative_type):
     """Тесты для проверки, что функция корректно распознает и применяет нужный тип маскировки,
-     в зависимости от типа входных данных (карта или счет)"""
+    в зависимости от типа входных данных (карта или счет)"""
     with pytest.raises(TypeError) as info_type:
         for i in coll_negative_type:
             widget.mask_account_card(i)
