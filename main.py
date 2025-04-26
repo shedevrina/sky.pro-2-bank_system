@@ -1,15 +1,17 @@
+import os
+
+from src.decorators import log
+from src.external_api import external_api
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
+from src.utils import transaction_json_conver
 from src.widget import get_date, mask_account_card
-from src.decorators import log
-import os
-
 
 while True:
     print(
-        "Введите номер домашней работы (слева):\n1 block - 1\nhomework_10_1 - 10.1\nhomework_11_1 - 11.1\n"
-        "homework_11_2 - 11.2\n"
+        "Введите номер домашней работы (справа):\n1 block - 1\nhomework_10_1 - 10.1\nhomework_11_1 - 11.1\n"
+        "homework_11_2 - 11.2\nhomework_12_1 - 12.1\n"
     )
     input_homework = float(input("Домашняя работа номер: "))
 
@@ -110,3 +112,16 @@ while True:
             return x + y
 
         my_function(1, 2)
+
+    # homework_12_1
+    elif input_homework == 12.1:
+
+        print("\n \n--------->homework_12_1 \n")
+
+        relative_path = "data/operations.json"
+        absolute_path = os.path.abspath(relative_path)
+        transaction_list = transaction_json_conver(absolute_path)
+
+        for i in transaction_list:
+            amount = external_api(i)
+            print(f"Транзакция id: {i['id']} - {amount} RUB")
