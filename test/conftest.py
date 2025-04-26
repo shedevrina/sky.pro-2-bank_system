@@ -1,5 +1,6 @@
 import pytest
 
+
 # Тестирования модуля masks.py
 @pytest.fixture
 def coll_number():
@@ -56,31 +57,72 @@ def coll_negative_list_data():
 @pytest.fixture
 def coll_transactions():
     return [
-    {
-        "id": 939719570,
+        {
+            "id": 939719570,
+            "state": "EXECUTED",
+            "date": "2018-06-30T02:08:58.425572",
+            "operationAmount": {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"}},
+            "description": "Перевод организации",
+            "from": "Счет 75106830613657916952",
+            "to": "Счет 11776614605963066702",
+        },
+        {
+            "id": 142264268,
+            "state": "EXECUTED",
+            "date": "2019-04-04T23:20:05.206878",
+            "operationAmount": {"amount": "79114.93", "currency": {"name": "RUB", "code": "RUB"}},
+            "description": "Перевод со счета на счет",
+            "from": "Счет 19708645243227258542",
+            "to": "Счет 75651667383060284188",
+        },
+        {
+            "id": 142264269,
+            "state": "EXECUTED",
+            "date": "2019-04-04T23:20:05.206878",
+            "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
+            "description": "Перевод со счета на счет",
+            "from": "Счет 19708645243227258542",
+            "to": "Счет 75651667383060284188",
+        },
+    ]
+
+
+# Для модуля test_external_api.py
+@pytest.fixture
+def coll_request_api_convert_value():
+    return {
+        "date": "2025-04-26",
+        "info": {"rate": 93.79415, "timestamp": 1745665264},
+        "query": {"amount": 5, "from": "test", "to": "test"},
+        "result": 468.97075,
+        "success": True,
+    }
+
+
+@pytest.fixture
+def coll_transaction_to_api():
+    return {
+        "id": 41428829,
         "state": "EXECUTED",
-        "date": "2018-06-30T02:08:58.425572",
-        "operationAmount": {"amount": "9824.07", "currency": {"name": "USD", "code": "USD"}},
-        "description": "Перевод организации",
-        "from": "Счет 75106830613657916952",
-        "to": "Счет 11776614605963066702",
-    },
-    {
-        "id": 142264268,
-        "state": "EXECUTED",
-        "date": "2019-04-04T23:20:05.206878",
-        "operationAmount": {"amount": "79114.93", "currency": {"name": "RUB", "code": "RUB"}},
-        "description": "Перевод со счета на счет",
-        "from": "Счет 19708645243227258542",
-        "to": "Счет 75651667383060284188",
-    },
-    {
-        "id": 142264269,
-        "state": "EXECUTED",
-        "date": "2019-04-04T23:20:05.206878",
-        "operationAmount": {"amount": "79114.93", "currency": {"name": "USD", "code": "USD"}},
-        "description": "Перевод со счета на счет",
-        "from": "Счет 19708645243227258542",
-        "to": "Счет 75651667383060284188",
-    },
-]
+        "date": "2019-07-03T18:35:29.512364",
+        "operationAmount": {"amount": "8221.37", "currency": {"name": "USD", "code": "USD"}},
+    }
+
+
+@pytest.fixture
+def coll_negative_type_transaction_json():
+    """Негативные данные для проверки номера счета//даты"""
+    return [True, -3, [1, "hello", [0]], [], None]
+
+
+@pytest.fixture
+def coll_negative_transaction_to_api():
+    return [
+        {
+            "id": 41428829,
+            "state": "EXECUTED",
+            "date": "2019-07-03T18:35:29.512364",
+            "operationAmount": {"currency": {"name": "USD"}},
+        },
+        {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+    ]
