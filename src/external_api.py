@@ -41,12 +41,12 @@ def external_api(transaction: dict) -> float:
                         return round(result["result"], 2)
 
                     else:
-                        return f'Ошибка API {response.status_code} - {response.text}'
+                        return f"Ошибка API {response.status_code} - {response.text}"
 
                 except requests.RequestException as e:
                     return f"Ошибка при обращении к API {e}"
             else:
-                return 'Валюта транзакции не подходит под следующие: RUB, USD, EUR'
+                return "Валюта транзакции не подходит под следующие: RUB, USD, EUR"
 
         else:
             raise KeyError

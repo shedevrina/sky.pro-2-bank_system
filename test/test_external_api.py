@@ -94,4 +94,4 @@ def test_external_api_other_currency(mock_get):
         "date": "2019-07-03T18:35:29.512364",
         "operationAmount": {"amount": "8221.37", "currency": {"name": "USD", "code": "EGP"}},
     }
-    assert external_api(transaction) == f"Валюта транзакции не подходит под следующие: RUB, USD, EUR"
+    assert external_api(transaction) == 'Валюта транзакции не подходит под следующие: RUB, USD, EUR'

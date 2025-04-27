@@ -1,14 +1,13 @@
 from unittest.mock import patch
 
-import pytest
-
 from src.utils import transaction_json_conver
 
 
-@patch("")
-def test_transaction_json_conver_negative_value():
+@patch("src.utils.json.load")
+@patch("src.utils.open")
+def test_transaction_json_conver(mock_open, mock_json_load):
+    mock_json_load.return_value = dict({"the_data": "This is fake data"})
+    assert transaction_json_conver("filepath") == {"the_data": "This is fake data"}
 
-    with pytest.raises(ValueError) as e:
-        transaction_json_conver(optional_list="John")
-
-    assert str(e.value) == "Invalid JSON data."
+    mock_json_load.return_value = [{"the_data": "This is real data"}, {"name": "John"}]
+    assert transaction_json_conver("filepath") == [{"the_data": "This is real data"}, {"name": "John"}]

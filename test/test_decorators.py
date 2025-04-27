@@ -29,7 +29,7 @@ def test_log_massage_wirh_file():
         return x + y
 
     with pytest.raises(ValueError) as e:
-        result = my_function(2, "3")
+        my_function(2, "3")
 
     assert str(e.value) == "Данные не складываются"
 
