@@ -1,5 +1,6 @@
 import os
 
+from src.data_files import file_csv, file_xlsx
 from src.decorators import log
 from src.external_api import external_api
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
@@ -10,8 +11,9 @@ from src.widget import get_date, mask_account_card
 
 while True:
     print(
-        "Введите номер домашней работы (справа):\n1 block - 1\nhomework_10_1 - 10.1\nhomework_11_1 - 11.1\n"
-        "homework_11_2 - 11.2\nhomework_12_1 - 12.1\n"
+        "\n###########\nВведите номер домашней работы (справа):\nFinal assignment 1 block - 1\nhomework_10_1 - 10.1\n"
+        "homework_11_1 - 11.1\n"
+        "homework_11_2 - 11.2\nhomework_12_1 - 12.1\nhomework_13_1 - 13.1\n"
     )
     input_homework = float(input("Домашняя работа номер: "))
 
@@ -125,3 +127,20 @@ while True:
         for i in transaction_list:
             amount = external_api(i)
             print(f"Транзакция id: {i['id']} - {amount} RUB")
+
+    # homework_13_1
+    elif input_homework == 13.1:
+
+        print("\n \n--------->homework_13_1 \n")
+
+        input_data_file = int(
+            input("Данные из transactions.csv - наберите 1 \nДанные из transactions_excel.xlsx - наберите 2\n")
+        )
+
+        if input_data_file == 1:
+            print(file_csv("transactions.csv"))
+        elif input_data_file == 2:
+            print(file_xlsx("transactions_excel.xlsx"))
+        else:
+            print("Не корректно указан номер операции. Попробуйте ещё раз!")
+            pass
