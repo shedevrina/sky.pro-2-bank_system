@@ -17,7 +17,7 @@ while True:
     )
     input_homework = float(input("Домашняя работа номер: "))
 
-    # 1 block
+# 1 block
     if input_homework == 1:
         print("\n \n--------->1 block\n")
 
@@ -30,7 +30,7 @@ while True:
         print(get_date("2024-03-11T02:26:18.671407"))
         print(get_date("1998-01-12T"))
 
-    # homework_10_1
+# homework_10_1
     elif input_homework == 10.1:
         print("\n \n--------->homework_10_1 \n")
 
@@ -55,7 +55,7 @@ while True:
             )
         )
 
-    # homework_11_1
+# homework_11_1
 
     elif input_homework == 11.1:
 
@@ -93,7 +93,7 @@ while True:
         for card_number in card_number_generator(6, 7):
             print(card_number)
 
-    # homework_11_2
+# homework_11_2
     elif input_homework == 11.2:
 
         print("\n \n--------->homework_11_2 \n")
@@ -115,7 +115,7 @@ while True:
 
         my_function(1, 2)
 
-    # homework_12_1
+# homework_12_1
     elif input_homework == 12.1:
 
         print("\n \n--------->homework_12_1 \n")
@@ -128,7 +128,7 @@ while True:
             amount = external_api(i)
             print(f"Транзакция id: {i['id']} - {amount} RUB")
 
-    # homework_13_1
+# homework_13_1
     elif input_homework == 13.1:
 
         print("\n \n--------->homework_13_1 \n")
