@@ -27,9 +27,20 @@ pip install -r requirements.txt
 python -m pytest --cov --cov-report=html:calc_cov
 ```
 
+## API:
+Конвертация валют из EUR и USD в RUB https://apilayer.com/exchangerates_data-api. 
+Файл с ключем API .env.example
+```
+API_KEY_CONVERT_FROM_EUR_OR_USD_TO_RUB=your_api_key
+```
+
+## Чтение данных с CVS и EXEL-файлов:
+1. В директории ./data файл с транзакциями transactions.csv;
+2. В директории ./data файл транзакциями transactions_excel.xlsx;
+
+
 ## Документация:
 Дополнительной документации не требуется.
 
 ## Команда проекта
-Шеврина Анастасия - Junior Python.
-
+Шеврина Анастасия - Junior Python
