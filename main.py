@@ -1,6 +1,6 @@
 import os
 
-from src.data_files import file_csv, file_xlsx
+from src.data_files import read_csv, read_xlsx
 from src.decorators import log
 from src.external_api import external_api
 from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
@@ -138,9 +138,9 @@ while True:
         )
 
         if input_data_file == 1:
-            print(file_csv("transactions.csv"))
+            print(read_csv("transactions.csv"))
         elif input_data_file == 2:
-            print(file_xlsx("transactions_excel.xlsx"))
+            print(read_xlsx("transactions_excel.xlsx"))
         else:
             print("Не корректно указан номер операции. Попробуйте ещё раз!")
             pass
