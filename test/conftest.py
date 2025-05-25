@@ -126,3 +126,8 @@ def coll_negative_transaction_to_api():
         },
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
     ]
+
+# Для модуля test_regular.py
+@pytest.fixture
+def coll_list_description():
+    return ["Перевод со счета на счет", "test"]
