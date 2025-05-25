@@ -13,14 +13,13 @@ def mask_account_card(account: str) -> str:
             account_set = account.split(" ")
 
             if len(account_set) >= 2:
-                print(account_set)
                 number = int(account_set[-1])
 
                 if "Счет" in account_set:
                     mask_account = get_mask_account(int(number))
                     return f"Счет {mask_account}"
 
-                elif "Visa" in account_set or "Maestro" in account_set:
+                elif "Visa" in account_set or "Maestro" in account_set or "MasterCard" in account_set:
                     mask_number = get_mask_card_number(int(number))
                     massage = " ".join(account_set[:-1])
                     return f"{massage} {mask_number}"
